@@ -12,12 +12,12 @@ function SearchPage() {
     method: "GET",
     headers: {
       accept: "application/json",
-      Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4N2I2NTZjNjY5YzNiYzYyMWJlODUzZjg4MTgxMzFiNCIsInN1YiI6IjY1YTIzYzcyODU4Njc4MDEyMjViN2MxZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.d3KBcObTNHALRyXIM_2m85SrMqh7Gy6eRrfOq-8ZgG8`,
+      Authorization: `${import.meta.env.VITE_AUTH}`,
     },
   };
   async function getMovieData() {
     const data = await fetch(
-      `https://api.themoviedb.org/3/search/multi?api_key=9e43f45f94705cc8e1d5a0400d19a7b7&language=en-US&page=1&query=${serachText}`,
+      `https://api.themoviedb.org/3/search/multi?${import.meta.env.VITE_API_KEY}&language=en-US&page=1&query=${serachText}`,
       options
     );
 
