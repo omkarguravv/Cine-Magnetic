@@ -11,8 +11,7 @@ const LatestContent = () => {
     method: "GET",
     headers: {
       accept: "application/json",
-      Authorization:
-        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4N2I2NTZjNjY5YzNiYzYyMWJlODUzZjg4MTgxMzFiNCIsInN1YiI6IjY1YTIzYzcyODU4Njc4MDEyMjViN2MxZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.d3KBcObTNHALRyXIM_2m85SrMqh7Gy6eRrfOq-8ZgG8",
+      Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4N2I2NTZjNjY5YzNiYzYyMWJlODUzZjg4MTgxMzFiNCIsInN1YiI6IjY1YTIzYzcyODU4Njc4MDEyMjViN2MxZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.d3KBcObTNHALRyXIM_2m85SrMqh7Gy6eRrfOq-8ZgG8`,
     },
   };
   async function getMovieData() {
@@ -20,25 +19,35 @@ const LatestContent = () => {
       "https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc",
       options
     );
-  
+
     const json = await data.json();
     console.log(json?.results);
     setMovies(json?.results);
   }
-  return (movies.length ===0) ? <HomePageShimmer/> : (
+  return !movies || movies.length === 0 ? (
+    <HomePageShimmer />
+  ) : (
     <>
-      <h1 className="flex text-4xl ml-32 ">Latest Content 🔥</h1>
+      <h1 className="flex text-3xl md-text-4xl justify-center ">
+        Latest Content 🔥
+      </h1>
       <div className="flex flex-wrap gap-10 justify-center mx-10 mt-10">
-        {movies.map((movie, index) => (
-          <div
-          className="w-44" 
-          key={index}>
+        {movies.map((movie) => (
+          <div className="w-44" key={movie.id}>
             <Link to={"/movie/" + movie.id}>
-              <img
-              className="rounded-md hover:brightness-50 hover:scale-[1.05] transition ease-in-out "
-                src={"https://image.tmdb.org/t/p/w342/" + movie.poster_path}
-                alt={movie.name}
-              />
+              {movie.poster_path == null ? (
+                <img
+                  className="rounded-md hover:brightness-50 hover:scale-[1.05] transition ease-in-out "
+                  src={"https://i.imgur.com/wjVuAGb.png"}
+                  alt={movie.title}
+                />
+              ) : (
+                <img
+                  className="rounded-md hover:brightness-50 hover:scale-[1.05] transition ease-in-out "
+                  src={"https://image.tmdb.org/t/p/w342/" + movie.poster_path}
+                  alt={movie.title}
+                />
+              )}
             </Link>
           </div>
         ))}
