@@ -22,7 +22,7 @@ const Header = () => {
       <div className="flex justify-between items-center mt-3">
         <Link to="/">
           <h1 className="text-2xl md:text-4xl font-bold md:font-semibold text-[#31B78F]">
-            Movie Magnet
+          Cine Magnetic
           </h1>
         </Link>
 
@@ -54,11 +54,11 @@ const Header = () => {
                   Movies
                 </Link>
               </h2>
-              <h2>
+              {/* <h2>
                 <Link to="/webseries" onClick={handleLinkClick}>
                   Web Series
                 </Link>
-              </h2>
+              </h2> */}
               <h2>
                 <Link to="/search" onClick={handleLinkClick}>
                   Search
