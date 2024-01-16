@@ -7,12 +7,12 @@ import AllMovies from "./pages/AllMovies.jsx";
 import LatestContent from "./pages/LatestContent.jsx";
 import SearchPage from "./pages/SearchPage.jsx";
 import Error from "./pages/Error.jsx";
-import './index.css'
+import "./index.css";
 const appRouter = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    errorElement :<Error/>,
+    errorElement: <Error />,
     children: [
       {
         path: "/",

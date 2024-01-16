@@ -1,8 +1,16 @@
-# React + Vite
+# Cine Magnetic Website
+![Alt text](image.png)
+Welcome to the Cine Magnetic website! This project is dedicated to providing users with a seamless and enjoyable experience for discovering and exploring movies.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+## Introduction
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[Cine Magnetic](https://cinemagnetic.vercel.app/) is a web application that allows users to discover, search, and explore a vast collection of movies. Whether you're looking for the latest releases, classic films, or hidden gems, Cine Magnetic has you covered.
+
+## Features
+
+- **Search**: Easily find movies using our powerful search feature.
+- **Browse**: Explore a curated collection of movies across various genres.
+- **Details**: Get detailed information about each movie
+
+

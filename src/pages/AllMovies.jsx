@@ -21,12 +21,12 @@ const AllMovies = () => {
 
   async function getMovieData() {
     const data = await fetch(
-      `https://api.themoviedb.org/3/movie/popular?language=en-US&page=${page}`,
+      `${import.meta.env.VITE_API_URL}/movie/popular?language=en-US&page=${page}`,
       options
     );
 
     const json = await data.json();
-    console.log(json.results);
+    // console.log(json.results);
     setMovies(json?.results);
   }
 

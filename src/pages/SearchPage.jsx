@@ -17,12 +17,12 @@ function SearchPage() {
   };
   async function getMovieData() {
     const data = await fetch(
-      `https://api.themoviedb.org/3/search/multi?${import.meta.env.VITE_API_KEY}&language=en-US&page=1&query=${serachText}`,
+      `${import.meta.env.VITE_API_URL}/search/multi?${import.meta.env.VITE_API_KEY}&language=en-US&page=1&query=${serachText}`,
       options
     );
 
     const json = await data.json();
-    console.log(json.results);
+    // console.log(json.results);
     setContent(json?.results);
   }
   return (
