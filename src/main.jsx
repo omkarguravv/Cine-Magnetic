@@ -8,6 +8,10 @@ import LatestContent from "./pages/LatestContent.jsx";
 import SearchPage from "./pages/SearchPage.jsx";
 import Error from "./pages/Error.jsx";
 import "./index.css";
+import AllSeries from "./pages/AllSeries.jsx";
+import SeriesDetailPage from "./pages/SeriesDetailPage.jsx";
+import SeasonDetailPage from "./pages/SeasonDetailPage.jsx"
+import SeriesPlay from "./pages/SeriesPlay.jsx";
 const appRouter = createBrowserRouter([
   {
     path: "/",
@@ -19,12 +23,28 @@ const appRouter = createBrowserRouter([
         element: <LatestContent />,
       },
       {
+        path: "/movies",
+        element: <AllMovies />,
+      },
+      {
         path: "/movie/:id",
         element: <MoviePage />,
       },
       {
-        path: "/movies",
-        element: <AllMovies />,
+        path: "/series",
+        element: <AllSeries />,
+      },
+      {
+        path: "/series/:id",
+        element: <SeriesDetailPage />,
+      },
+      {
+        path: "/series/:id/:seasonid",
+        element: <SeasonDetailPage />,
+      },
+      {
+        path: "/series/:id/:seasonid/:epId",
+        element: <SeriesPlay />,
       },
       {
         path: "/search",

@@ -44,7 +44,7 @@ const AllMovies = () => {
     <HomePageShimmer />
   ) : (
     <>
-      <h1 className="flex text-3xl md-text-4xl justify-center ">Movies 🔥</h1>
+      <h1 className="flex text-3xl md-text-4xl justify-center w-full ">Movies 🔥</h1>
       <div className="flex flex-wrap gap-10 justify-center mx-10 mt-10">
         {movies.slice(0, 14).map((movie, index) => (
           <div className="w-44" key={index}>

@@ -4,7 +4,7 @@ import MoviePageShimmer from "../Shimmer/MoviePageShimmer";
 
 const MoviePage = () => {
   const { id } = useParams();
-  const [movie, setMovie] = useState([]);
+  const [movie, setMovie] = useState(null);
   const [genres, setGenres] = useState([]);
 
   useEffect(() => {
@@ -29,11 +29,11 @@ const MoviePage = () => {
     setMovie(json);
   }
 
-  return movie == null ? (
+  return (movie == null) ? (
     <MoviePageShimmer />
   ) : (
     <>
-      <div className="px-5 md-px-20 md-h-fit h-screen mt-12 bg-[#0D1322]">
+      <div className="px-5 md-px-20 md-h-fit mt-12 bg-[#0D1322]">
         <h1 className="text-3xl md-text-5xl font-semibold">{movie?.title}</h1>
         <p className="mt-2 md-mt-10 text-xl">
           {movie?.vote_average?.toFixed(1)} ⭐

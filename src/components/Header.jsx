@@ -54,11 +54,11 @@ const Header = () => {
                   Movies
                 </Link>
               </h2>
-              {/* <h2>
-                <Link to="/webseries" onClick={handleLinkClick}>
-                  Web Series
+              <h2>
+                <Link to="/series" onClick={handleLinkClick}>
+                   Series
                 </Link>
-              </h2> */}
+              </h2>
               <h2>
                 <Link to="/search" onClick={handleLinkClick}>
                   Search
@@ -76,9 +76,9 @@ const Header = () => {
           <h2>
             <Link to="/movies">Movies</Link>
           </h2>
-          {/* <h2>
-            <Link to="/webseries">Web Series</Link>
-          </h2> */}
+          <h2>
+            <Link to="/series">Series</Link>
+          </h2>
           <h2>
             <Link to="/search">Search</Link>
           </h2>

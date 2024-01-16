@@ -26,7 +26,7 @@ function SearchPage() {
     setContent(json?.results);
   }
   return (
-    <div className="h-screen ">
+    <div className="">
       <div className=" flex justify-center px-20 mt-10 pt-2 relative mx-auto text-gray-600">
         <input
           className="border-2  border-gray-300 bg-white h-16 px-5 pr-16 rounded-lg text-2xl focus:outline-none"

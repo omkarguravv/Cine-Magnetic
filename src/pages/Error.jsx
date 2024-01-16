@@ -5,7 +5,7 @@ const Error = () => {
   // console.log(err);
 
   return (
-    <div className="bg-[#0D1322] text-white h-screen flex items-center justify-center">
+    <div className="bg-[#0D1322] text-white  flex items-center justify-center min-h-screen">
       <div className="text-center">
         <h1 className="text-7xl text-[#31B78F]">OOPS!!!</h1>
         <h2 className="text-5xl mt-5">Something went Wrong</h2>
