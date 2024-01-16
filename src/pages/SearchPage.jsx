@@ -22,7 +22,7 @@ function SearchPage() {
     );
 
     const json = await data.json();
-    // console.log(json.results);
+    console.log(json.results);
     setContent(json?.results);
   }
   return (
@@ -42,7 +42,7 @@ function SearchPage() {
           ) : (
             content.map((text, index) => (
               <div className="w-44" key={index}>
-                <Link to={"/movie/" + text?.id}>
+                <Link to={`/${((text.media_type) === 'tv')? "series" : "movie"}/` + text?.id}>
                   {text?.poster_path == null ? (
                     <img
                       className="rounded-md hover:brightness-50 hover:scale-[1.05] transition ease-in-out "

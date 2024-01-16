@@ -47,7 +47,7 @@ const SeasonDetailPage = () => {
             <Link
               to={`/series/${id}/${seasonid}/${episode.episode_number}`}
               key={episode.id}
-              className="rounded-md hover:brightness-50 hover:scale-[1.05] transition ease-in-out "
+              className="rounded-md hover:brightness-50 hover:scale-[1.05] transition ease-in-out w-4"
             >
               <h3 className="text-xl md:text-2xl mb-4">
                 S{seasons.season_number} - E{episode?.episode_number}

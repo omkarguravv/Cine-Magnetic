@@ -38,7 +38,7 @@ const MoviePage = () => {
         <p className="mt-2 md-mt-10 text-xl">
           {movie?.vote_average?.toFixed(1)} ⭐
         </p>
-        <p className="mt-4 md-mt-10">
+        <p className="mt-4 md-mt-10 flex flex-wrap">
           {genres.map((genre) => (
             <span
               className="text-white bg-[#31B78F] font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2"
