@@ -21,7 +21,7 @@ const MoviePage = () => {
 
   async function getMovieData() {
     const data = await fetch(
-      `${import.meta.envVITE_API_URL}/movie/${id}?language=en-US`,
+      `${import.meta.env.VITE_API_URL}/movie/${id}?language=en-US`,
       options
     );
     const json = await data.json();
