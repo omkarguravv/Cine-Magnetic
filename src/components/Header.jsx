@@ -23,7 +23,7 @@ const Header = () => {
         <Link className="flex justify-center items-center" to="/">
           <img
             className="w-10"
-            src="./src/assets/logo.png"
+            src="https://cinemagnetic.vercel.app/src/assets/logo.png"
             alt="cine magnetic"
           />
           <h1 className="text-2xl md:text-4xl font-bold md:font-semibold text-[#31B78F]">
