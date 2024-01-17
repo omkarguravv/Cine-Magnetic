@@ -18,28 +18,39 @@ const Header = () => {
   };
 
   return (
-    <div className="bg-[#0D1322] text-white py-2 px-4 md:px-10 sticky top-0 z-10 h-16	">
+    <div className="bg-[#0D1322] text-white py-2 px-4 md:px-10 sticky top-0 z-10 h-16 	">
       <div className="flex justify-between items-center mt-3">
-        <Link to="/">
+        <Link className="flex justify-center items-center" to="/">
+          <img
+            className="w-10"
+            src="./src/assets/logo.png"
+            alt="cine magnetic"
+          />
           <h1 className="text-2xl md:text-4xl font-bold md:font-semibold text-[#31B78F]">
-          Cine Magnetic
+            Cine Magnetic
           </h1>
         </Link>
 
+        <Link to="/search">
+        <h2 className="flex  justify-center items-center text-xl md-text-2xl   gap-2">
+          <FaSearch />
+           <p onClick={handleLinkClick}>Search</p>
+            
+        </h2>
+          </Link>
         {/* Mobile Sidebar Toggle Button */}
 
-        <button className="md:hidden text-2xl flex gap-10" >
-          <Link to="/search">
-            <FaSearch />
-          </Link>
-          <FaBars onClick={toggleSidebar}/>
+        <button className="md:hidden text-2xl flex gap-10">
+          <FaBars onClick={toggleSidebar} />
         </button>
+
+
 
         {/* Mobile Sidebar */}
         {isSidebarOpen && (
           <div className="md:hidden fixed inset-0 bg-[#0D1322] z-20">
             <div className="flex justify-end p-4">
-              <button onClick={toggleSidebar} className="text-2xl">
+              <button onClick={toggleSidebar} className="text-2xl mt-2">
                 <ImCross />
               </button>
             </div>
@@ -56,10 +67,11 @@ const Header = () => {
               </h2>
               <h2>
                 <Link to="/series" onClick={handleLinkClick}>
-                   Series
+                  Series
                 </Link>
               </h2>
-              <h2>
+              <h2 className="flex justify-center items-center  gap-2">
+                <FaSearch />
                 <Link to="/search" onClick={handleLinkClick}>
                   Search
                 </Link>
@@ -78,9 +90,6 @@ const Header = () => {
           </h2>
           <h2>
             <Link to="/series">Series</Link>
-          </h2>
-          <h2>
-            <Link to="/search">Search</Link>
           </h2>
         </div>
       </div>

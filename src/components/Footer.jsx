@@ -7,7 +7,7 @@ const Footer = () => {
         <p>This site does not store any files on our server, we only linked to the media which is hosted on 3rd party services.</p>
       
 
-      <p className="text-sm md-text-lg mt-4">&copy; {new Date().getFullYear()} Movie Magnet</p> 
+      <p className="text-sm md-text-lg mt-4">&copy; {new Date().getFullYear()} Cine Magnetic</p> 
       </div>
     </footer>
   );

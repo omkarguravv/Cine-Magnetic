@@ -26,12 +26,13 @@ function SearchPage() {
     setContent(json?.results);
   }
   return (
-    <div className="">
-      <div className=" flex justify-center px-20 mt-10 pt-2 relative mx-auto text-gray-600">
+    <div className="text-center ">
+      <h2 className="text-2xl mt-10">Search Page </h2>
+      <div className=" flex justify-center px-20 mt-5 pt-2 relative mx-auto text-gray-600">
         <input
-          className="border-2  border-gray-300 bg-white h-16 px-5 pr-16 rounded-lg text-2xl focus:outline-none"
+          className="border-2  border-gray-300 bg-white h-12 md-h-16 w-5/6 md-w-2/5 px-5 pr-16 rounded-lg text-2xl focus:outline-none"
           type="text"
-          placeholder="Search ..."
+          placeholder="Search..."
           onChange={(e) => setSearchText(e.target.value)}
         />
       </div>

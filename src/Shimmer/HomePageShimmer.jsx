@@ -2,7 +2,7 @@ const HomePageShimmer = () => {
   return (
     <>
       <div className="flex shadow flex-wrap gap-10 justify-center mx-10 mt-10">
-        {Array(25)
+        {Array(21)
           .fill("")
           .map((index) => (
             <div

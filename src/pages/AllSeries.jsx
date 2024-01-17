@@ -42,7 +42,7 @@ function AllSeries() {
       <HomePageShimmer />
     ) : (
       <>
-        <h1 className="flex text-3xl md-text-4xl justify-center ">series 🔥</h1>
+        <h1 className="flex text-2xl md-text-4xl justify-center ">series 🔥</h1>
         <div className="flex flex-wrap gap-10 justify-center mx-10 mt-10">
         {series.slice(0, 14).map((serie, index) => (
   <div className="w-44" key={index}>
