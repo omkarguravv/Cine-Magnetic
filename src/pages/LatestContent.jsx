@@ -6,6 +6,7 @@ const LatestContent = () => {
   const [movies, setMovies] = useState([]);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(true);
+  
   useEffect(() => {
     getMovieData();
   }, [page]);
@@ -26,7 +27,7 @@ const LatestContent = () => {
     const data = await fetch(
       `${
         import.meta.env.VITE_API_URL
-      }/discover/tv?include_adult=false&include_video=false&language=en-US&page=${page}&sort_by=popularity.desc`,
+      }/discover/movie?include_adult=false&include_video=false&language=en-US&page=${page}&sort_by=popularity.desc`,
       options
     );
 
@@ -55,7 +56,7 @@ const LatestContent = () => {
       <div className="flex flex-wrap gap-10 justify-center mx-10 mt-10">
         {movies.map((movie) => (
           <div className="w-44" key={movie.id}>
-            <Link to={"/movie/" + movie.id}>
+            <Link to={`/${((movie.media_type) === 'tv')? "series" : "movie"}/` + movie?.id}>
               {movie.poster_path == null ? (
                 <img
                   className="rounded-md hover:brightness-50 hover:scale-[1.05] transition ease-in-out "
