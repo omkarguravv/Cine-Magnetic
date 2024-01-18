@@ -1,0 +1,30 @@
+{
+    "short_name": "Cine Magnetic",
+    "name": "Cine Magnetic - Your go-to source for movie content and entertainment.",
+    "icons": [
+      {
+        "src": "favicon.ico",
+        "sizes": "64x64 32x32 24x24 16x16",
+        "type": "image/x-icon"
+      },
+      {
+        "src": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/codeigniter/codeigniter-plain.svg",
+        "sizes": "64x64 32x32 24x24 16x16",
+        "type": "image/x-icon"
+      },
+      {
+        "src": "favicon.ico",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "favicon.ico",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ],
+    "start_url": ".",
+    "display": "standalone",
+    "theme_color": "#000000",
+    "background_color": "#ffffff"
+  }

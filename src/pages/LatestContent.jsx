@@ -60,13 +60,13 @@ const LatestContent = () => {
                 <img
                   className="rounded-md hover:brightness-50 hover:scale-[1.05] transition ease-in-out "
                   src={"https://i.imgur.com/wjVuAGb.png"}
-                  alt={movie.title}
+                  alt={movie?.title}
                 />
               ) : (
                 <img
                   className="rounded-md hover:brightness-50 hover:scale-[1.05] transition ease-in-out "
                   src={"https://image.tmdb.org/t/p/w342/" + movie.poster_path}
-                  alt={movie.title}
+                  alt={movie?.title}
                 />
               )}
             </Link>

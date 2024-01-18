@@ -58,6 +58,7 @@ function AllSeries() {
         </div>
         <div className="pagination flex gap-10 justify-center mt-10 pb-10">
           <button
+          aria-label="Previous"
             className="flex bg-white text-black px-5 py-2 rounded-lg justify-center  "
             onClick={handlePrevious}
           >
@@ -66,6 +67,7 @@ function AllSeries() {
             
           </button>
           <button
+          aria-label="Next"
             className="flex bg-white text-black px-5 py-2 rounded-lg justify-center "
             onClick={handleNext}
           >

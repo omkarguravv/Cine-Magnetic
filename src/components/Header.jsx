@@ -20,7 +20,7 @@ const Header = () => {
   return (
     <div className="bg-[#0D1322] text-white py-2 px-4 md:px-10 sticky top-0 z-10 h-16 	">
       <div className="flex justify-between items-center mt-3">
-        <Link className="flex justify-center items-center" to="/">
+        <Link  className="flex justify-center items-center" to="/">
           {/* <img
             className="w-10"
             src="./src/assets/logo.png"
@@ -34,15 +34,15 @@ const Header = () => {
         <Link to="/search">
         <h2 className="flex  justify-center items-center text-xl md-text-2xl   gap-2">
           <FaSearch />
-           <p onClick={handleLinkClick}>Search</p>
+           <p className="text-xl md-text-2xl " onClick={handleLinkClick}>Search</p>
             
         </h2>
           </Link>
         {/* Mobile Sidebar Toggle Button */}
 
-        <button className="md:hidden text-2xl flex gap-10">
+        <p aria-label="toggle" className="md:hidden text-2xl flex gap-10">
           <FaBars onClick={toggleSidebar} />
-        </button>
+        </p>
 
 
 
@@ -50,9 +50,9 @@ const Header = () => {
         {isSidebarOpen && (
           <div className="md:hidden fixed inset-0 bg-[#0D1322] z-20">
             <div className="flex justify-end p-4">
-              <button onClick={toggleSidebar} className="text-2xl mt-2">
+              <p aria-label="toggle-back" onClick={toggleSidebar} className="text-2xl mt-2">
                 <ImCross />
-              </button>
+              </p>
             </div>
             <div className="flex flex-col items-center text-2xl gap-y-10 mt-20">
               <h2>

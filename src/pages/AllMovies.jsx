@@ -53,13 +53,13 @@ const AllMovies = () => {
                 <img
                   className="rounded-md hover:brightness-50 hover:scale-[1.05] transition ease-in-out "
                   src={"https://i.imgur.com/wjVuAGb.png"}
-                  alt={movie.title}
+                  alt={movie?.title}
                 />
               ) : (
                 <img
                   className="rounded-md hover:brightness-50 hover:scale-[1.05] transition ease-in-out "
                   src={"https://image.tmdb.org/t/p/w342/" + movie.poster_path}
-                  alt={movie.title}
+                  alt={movie?.title}
                 />
               )}
             </Link>
@@ -67,7 +67,7 @@ const AllMovies = () => {
         ))}
       </div>
       <div className="pagination flex gap-10 justify-center mt-10 pb-10">
-        <button
+        <button aria-label="Previous"
           className="flex bg-white text-black px-5 py-2 rounded-lg justify-center  "
           onClick={handlePrevious}
         >
@@ -76,6 +76,7 @@ const AllMovies = () => {
           
         </button>
         <button
+        aria-label="Next"
           className="flex bg-white text-black px-5 py-2 rounded-lg justify-center "
           onClick={handleNext}
         >
