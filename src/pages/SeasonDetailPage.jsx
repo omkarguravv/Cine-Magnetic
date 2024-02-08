@@ -26,7 +26,7 @@ const SeasonDetailPage = () => {
       options
     );
     const json = await data.json();
-    console.log(json);
+    // console.log(json);
 
     setSeasons(json);
     setepisodeDetails(json.episodes);

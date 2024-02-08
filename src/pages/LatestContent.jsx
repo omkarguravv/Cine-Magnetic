@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import HomePageShimmer from "../Shimmer/HomePageShimmer";
+import BackToTop from "../components/BackToTop";
 
 const LatestContent = () => {
   const [movies, setMovies] = useState([]);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(true);
-  
+
   useEffect(() => {
     getMovieData();
   }, [page]);
@@ -46,17 +47,33 @@ const LatestContent = () => {
       setPage((prevPage) => prevPage + 1);
     }
   };
-  return !movies || movies.length === 0 ? (
+  //early return
+  if (!movies) return null;
+
+  return movies.length === 0 ? (
     <HomePageShimmer />
   ) : (
     <>
+      <BackToTop />
       <h1 className="flex text-2xl md-text-4xl justify-center mt-5">
         Latest Content 🔥
       </h1>
-      <div className="flex flex-wrap gap-10 justify-center mx-10 mt-10">
+      <div className="flex flex-wrap gap-5 justify-center mx-5 mt-10">
         {movies.map((movie) => (
-          <div className="w-44" key={movie.id}>
-            <Link to={`/${((movie.media_type) === 'tv')? "series" : "movie"}/` + movie?.id}>
+          <div
+            className="w-56 pb-10"
+            key={
+              movie.id +
+              Math.floor(Math.random() * (Math.floor(100) - Math.ceil(1) + 1)) +
+              Math.ceil(1)
+            }
+          >
+            <Link
+              to={
+                `/${movie.media_type === "tv" ? "series" : "movie"}/` +
+                movie?.id
+              }
+            >
               {movie.poster_path == null ? (
                 <img
                   className="rounded-md hover:brightness-50 hover:scale-[1.05] transition ease-in-out "
@@ -64,17 +81,25 @@ const LatestContent = () => {
                   alt={movie?.title}
                 />
               ) : (
-                <img
-                  className="rounded-md hover:brightness-50 hover:scale-[1.05] transition ease-in-out "
-                  src={"https://image.tmdb.org/t/p/w342/" + movie.poster_path}
-                  alt={movie?.title}
-                />
+                <div className="p-1 rounded-md text-white text-xl text-center hover:scale-[1.05] transition ease-in-out hover:brightness-50 ">
+                  <img
+                    className="rounded-lg "
+                    src={"https://image.tmdb.org/t/p/w342/" + movie.poster_path}
+                    alt={movie?.title}
+                  />
+                  <div className="my-4  overflow-hidden lazy-load-image-background ">
+                    {movie?.title.slice(
+                      0,
+                      movie.title.length > 19 ? 19 : movie.length
+                    )}
+                    {movie?.title.length > 15 ? "..." : ""}
+                  </div>
+                </div>
               )}
             </Link>
           </div>
         ))}
 
-        {loading ? <HomePageShimmer /> : null}
       </div>
     </>
   );

@@ -24,7 +24,7 @@ function AllSeries() {
       );
   
       const json = await data.json();
-      console.log(json.results);
+      // console.log(json.results);
       setSeries(json?.results);
     }
   

@@ -22,7 +22,7 @@ function SearchPage() {
     );
 
     const json = await data.json();
-    console.log(json.results);
+    // console.log(json.results);
     setContent(json?.results);
   }
   return (

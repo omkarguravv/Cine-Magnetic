@@ -27,7 +27,7 @@ const SeriesDetailPage = () => {
     );
     const json = await data.json();
     setGenres(json.genres);
-    console.log(json.seasons)
+    // console.log(json.seasons)
     setseriesDetails(json);
     setSeasons(json.seasons);
   }
