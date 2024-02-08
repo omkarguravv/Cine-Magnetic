@@ -33,7 +33,7 @@ const LatestContent = () => {
     );
 
     const json = await data.json();
-    console.log(json?.results);
+    // console.log(json?.results);
     setMovies((prevData) => [...prevData, ...json?.results]);
     setLoading(false);
   }

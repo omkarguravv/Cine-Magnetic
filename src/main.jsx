@@ -12,6 +12,7 @@ import AllSeries from "./pages/AllSeries.jsx";
 import SeriesDetailPage from "./pages/SeriesDetailPage.jsx";
 import SeasonDetailPage from "./pages/SeasonDetailPage.jsx"
 import SeriesPlay from "./pages/SeriesPlay.jsx";
+import PlayMovie from "./pages/PlayMovie.jsx";
 const appRouter = createBrowserRouter([
   {
     path: "/",
@@ -29,6 +30,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/movie/:id",
         element: <MoviePage />,
+      },
+      {
+        path: "/movie/:id/play",
+        element: <PlayMovie />,
       },
       {
         path: "/series",
