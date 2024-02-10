@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import HomePageShimmer from "../Shimmer/HomePageShimmer";
+import MovieList from "../components/MovieList";
+import AllMovieShimmer from "../Shimmer/AllMovieShimmer";
+import Pagination from "../components/Pagination";
 // import { GrLinkNext, GrLinkPrevious } from "react-icons/gr";
 
 const AllMovies = () => {
@@ -21,7 +22,9 @@ const AllMovies = () => {
 
   async function getMovieData() {
     const data = await fetch(
-      `${import.meta.env.VITE_API_URL}/movie/popular?language=en-US&page=${page}`,
+      `${
+        import.meta.env.VITE_API_URL
+      }/movie/popular?language=en-US&page=${page}`,
       options
     );
 
@@ -34,56 +37,30 @@ const AllMovies = () => {
     if (page > 1) {
       setPage((prevPage) => prevPage - 1);
     }
+    movies.length = 0;
   };
 
   const handleNext = () => {
-    setPage((prevPage) => prevPage + 1);
+    if (page < 101) {
+      setPage((prevPage) => prevPage + 1);
+    }
+    movies.length = 0;
   };
 
-  return movies.length === 0 ? (
-    <HomePageShimmer />
-  ) : (
+  return (
     <>
-      <h1 className="flex text-2xl md-text-4xl justify-center w-full ">Movies 🔥</h1>
-      <div className="flex flex-wrap gap-10 justify-center mx-10 mt-10">
-        {movies.slice(0, 14).map((movie, index) => (
-          <div className="w-44" key={index}>
-            <Link to={"/movie/" + movie.id}>
-            {!movie.poster_path  ? (
-                <img
-                  className="rounded-md hover:brightness-50 hover:scale-[1.05] transition ease-in-out "
-                  src={"https://i.imgur.com/wjVuAGb.png"}
-                  alt={movie?.title}
-                />
-              ) : (
-                <img
-                  className="rounded-md hover:brightness-50 hover:scale-[1.05] transition ease-in-out "
-                  src={"https://image.tmdb.org/t/p/w342/" + movie.poster_path}
-                  alt={movie?.title}
-                />
-              )}
-            </Link>
-          </div>
-        ))}
+      <h1 className="flex text-2xl md-text-4xl justify-center w-full ">
+        <div className="bg-[#31B78F] flex  text-white px-5 py-2 rounded-lg justify-center items-center ">Movies 🔥</div>
+        
+      </h1>
+      <div className="flex flex-wrap gap-5 justify-center mx-10 mt-10">
+        {movies.length === 0 ? (
+          <AllMovieShimmer />
+        ) : (
+          <MovieList currentMovie={movies} />
+        )}
       </div>
-      <div className="pagination flex gap-10 justify-center mt-10 pb-10">
-        <button aria-label="Previous"
-          className="flex bg-white text-black px-5 py-2 rounded-lg justify-center  "
-          onClick={handlePrevious}
-        >
-          {/* <GrLinkPrevious /> */}
-          <p>Previous</p>
-          
-        </button>
-        <button
-        aria-label="Next"
-          className="flex bg-white text-black px-5 py-2 rounded-lg justify-center "
-          onClick={handleNext}
-        >
-          Next 
-          {/* <GrLinkNext /> */}
-        </button>
-      </div>
+     <Pagination page={page} handleNext={handleNext} handlePrevious={handlePrevious}/>
     </>
   );
 };

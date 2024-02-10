@@ -1,5 +1,6 @@
 # Cine Magnetic Website
 ![Alt text](image.png)
+![alt text](image-1.png)
 Welcome to the Cine Magnetic website! This project is dedicated to providing users with a seamless and enjoyable experience for discovering and exploring movies.
 
 

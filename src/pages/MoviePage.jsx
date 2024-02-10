@@ -82,11 +82,7 @@ const MoviePage = () => {
               {" "}
               <span className="font-bold">RunTime - </span> {movie?.runtime} min
             </h2>
-            <h2 className="text-2xl mt-4">
-              {" "}
-              <span className="font-bold">Released Date - </span>{" "}
-              {movie?.release_date}
-            </h2>
+  
 
             {/* desktop play btn */}
             <Link

@@ -32,7 +32,7 @@ const Header = () => {
         </Link>
 
         <Link to="/search">
-        <h2 className="flex  justify-center items-center text-xl md-text-2xl   gap-2">
+        <h2 className=" md:hidden flex  justify-center items-center text-xl md-text-2xl   gap-2">
           <FaSearch />
            <p className="text-xl md-text-2xl " onClick={handleLinkClick}>Search</p>
             
@@ -90,6 +90,10 @@ const Header = () => {
           </h2>
           <h2>
             <Link to="/series">Series</Link>
+          </h2>
+          <h2 className="flex  items-center gap-2">
+          <FaSearch /> 
+            <Link to="/search">Search</Link>
           </h2>
         </div>
       </div>
