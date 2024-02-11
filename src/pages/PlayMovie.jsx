@@ -4,7 +4,7 @@ function PlayMovie() {
     const { id } = useParams();
 
   return (
-    <div className="px-10 md-px-20 md-h-fit mt-12 bg-[#0D1322]">
+    <div className="px-10 md-px-20 md-h-fit mt-12 bg-[#0D1322] mt-10">
      
         <div className="flex justify-center mt-10">
           <iframe

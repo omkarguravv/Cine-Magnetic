@@ -9,7 +9,6 @@ const LatestContent = () => {
   const [type, setType] = useState("top_rated");
 
   useEffect(() => {
-    console.log("object");
     getMovieData();
   }, [type, page]);
 
@@ -60,13 +59,13 @@ const LatestContent = () => {
 
   return (
     <>
-      <h1 className="flex text-2xl md-text-4xl justify-center w-full ">
+      <h1 className="flex text-sm md:text-2xl md-text-4xl justify-center w-full ">
         <div className="flex  gap-2">
           <button
             className={
               type === "now_playing"
-                ? "bg-[#31B78F] flex  text-white px-5 py-2 rounded-lg justify-center items-center "
-                : "bg-white flex  text-black px-5 py-2 rounded-lg justify-center items-center hover:bg-white/50 "
+                ? "bg-[#31B78F] flex  text-white  px-3 py-1 rounded-lg justify-center items-center "
+                : "bg-white flex  text-black px-3 py-1 rounded-lg justify-center items-center hover:bg-white/50 "
             }
             onClick={() => changeCategory("now_playing")}
           >
@@ -75,8 +74,8 @@ const LatestContent = () => {
           <button
             className={
               type === "top_rated"
-                ? "bg-[#31B78F] flex  text-white px-5 py-2 rounded-lg justify-center items-center "
-                : "bg-white flex  text-black px-5 py-2 rounded-lg justify-center items-center hover:bg-white/50 "
+                ? "bg-[#31B78F] flex  text-white px-3 py-1 rounded-lg justify-center items-center "
+                : "bg-white flex  text-black px-3 py-1 rounded-lg justify-center items-center hover:bg-white/50 "
             }
             onClick={() => changeCategory("top_rated")}
           >
@@ -85,8 +84,8 @@ const LatestContent = () => {
           <button
             className={
               type === "popular"
-                ? "bg-[#31B78F] flex  text-white px-5 py-2 rounded-lg justify-center items-center "
-                : "bg-white flex  text-black px-5 py-2 rounded-lg justify-center items-center hover:bg-white/50 "
+                ? "bg-[#31B78F] flex  text-white px-3 py-1 rounded-lg justify-center items-center "
+                : "bg-white flex  text-black px-3 py-1 rounded-lg justify-center items-center hover:bg-white/50 "
             }
             onClick={() => changeCategory("popular")}
           >
@@ -94,7 +93,7 @@ const LatestContent = () => {
           </button>
         </div>
       </h1>
-      <div className="flex flex-wrap gap-5 justify-center mx-10 mt-10">
+      <div className="flex flex-wrap gap-2 md:gap-5 justify-center mx-10 mt-10">
         {movies.length === 0 ? (
           <AllMovieShimmer />
         ) : (

@@ -1,7 +1,7 @@
 function AllMovieShimmer() {
   return (
     <div className="flex shadow flex-wrap gap-5 justify-center mx-10 mt-10">
-      {Array(16)
+      {Array(18)
         .fill("")
         .map((index) => (
           <div
