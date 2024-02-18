@@ -96,6 +96,7 @@ const MoviePage = () => {
             </Link>
           </div>
         </div>
+      
       </div>
     </>
   );

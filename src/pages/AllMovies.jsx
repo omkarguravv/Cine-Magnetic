@@ -58,7 +58,7 @@ const AllMovies = () => {
   return (
     <>
       <h1 className="flex text-2xl md-text-4xl justify-center w-full  gap-5">
-        <div className="bg-[rgb(49,183,143)] flex  text-white px-5 py-2 rounded-lg justify-center items-center ">
+        <div className="bg-[#31B78F] flex  text-white px-3 py-1 rounded-lg justify-center items-center">
           Movies 🔥
         </div>
 
